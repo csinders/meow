@@ -1,0 +1,31 @@
+document.addEventListener("DOMContentLoaded", function () {
+	var pop=Popcorn.vimeo("#video","https://vimeo.com/90817397");
+	pop.autoplay(true);
+	console.log(pop);
+	pop.video.addEventListener('ended', function(e) {
+		// change this to the map url
+		window.open('http://localhost:8000/', '_self');
+	});
+
+
+
+	pop.cue(2, function(){
+		$('#text1').fadeIn(5000);
+		
+	});
+
+	pop.cue(11, function(){
+		$('#text2').fadeIn(5000);
+	});
+	
+	pop.cue(17, function(){
+		$('#text3').fadeIn(5000);
+	});
+
+	pop.cue(26, function(){
+		$('#video').fadeOut(2000);
+	});
+	
+
+}, false);
+

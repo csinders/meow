@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+       
+        <link rel="stylesheet" href="style.css">
+        <link href='http://fonts.googleapis.com/css?family=Amatic+SC|Advent+Pro:400,200' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script> 
+    </head>
+    <body>
+     
+
+        <!-- Add your site or application content here -->
+     <!--    <div id="night">
+        <h4> NightWitch.es </h4>
+        </div> -->
+
+
+        <audio autoplay src="nera_epilouge_01.mp3"></audio>
+        <div id="video"> </div> 
+
+    <!-- <iframe src="http://player.vimeo.com/video/90817397?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1" style='width:100%; height:100%; position:absolute;' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+    <!-- <video autoplay src="Sequence 01_1.mov"></video> -->
+
+    
+        <div class="textItem">
+            <p id="text1" >I sometimes stare into the blackness and close my eyes. </p>
+            <p id="text2">I can still imagine myself as a young girl, up there in my little bomber.</p>
+            <p id="text3">And I ask myself, "Nadia, how did you do it?"</p>
+        </div>
+    </body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("HERE!!!");
+            var pop=Popcorn.vimeo("#video","https://vimeo.com/90817397");
+            pop.autoplay(true);
+            console.log(pop);
+            // pop.video.addEventListener('ended', function(e) {
+            //     // change this to the map url
+            //     window.open('http://localhost:8000/', '_self');
+            // });
+
+            pop.cue(2, function(){
+                $('#text1').fadeIn(5000);    
+            });
+
+            pop.cue(11, function(){
+                $('#text2').fadeIn(5000);
+            });
+            
+            pop.cue(17, function(){
+                $('#text3').fadeIn(5000);
+            });
+
+            pop.cue(26, function(){
+                $('#video').fadeOut(2000);
+            });
+            
+        }, false);     
+    </script>
+</html>

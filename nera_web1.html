@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+       
+        <link rel="stylesheet" href="style.css">
+        <link href='http://fonts.googleapis.com/css?family=Amatic+SC|Advent+Pro:400,200' rel='stylesheet' type='text/css'>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script> 
+     
+    </head>
+    <body>
+  
+	    <audio id="audio" src="nera_web_1.m4a"></audio>
+<!-- 	 	<audio id="audio" src="nera_epilogue_01.mp3"></audio> -->
+	    <div class="neraItem">
+			<p id="nera1" >My brother died in the beginning of the war, did you know that? He was on the front lines. </p>
+	    	<p id="nera2">My village, Donestk, in the Ukraine was captured and my home was turned into a gestapo police station.</p>
+	     	<p id="nera3"> My parents are still alive, I think. I havent heard from them in a while...</p>
+	    </div>
+	</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+	var pop= Popcorn("#audio");
+	pop.play();
+
+		// // change this to the map url
+		// window.open('http://localhost:8000/', '_self');
+
+	pop.cue(2, function(){
+		$('#nera1').fadeIn(5000);
+		console.log("HERE!");	
+	});
+
+	pop.cue(11, function(){
+		$('#nera2').fadeIn(5000);
+	});
+	
+	pop.cue(17, function(){
+		$('#nera3').fadeIn(5000);
+	});
+
+});
+	</script>
+</html>
